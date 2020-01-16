@@ -1,18 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      Login
-    </ion-title>
+    <ion-title>Register</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card class="welcome-card">
     <ion-card-content>
-      <form [formGroup]="validationForm" (ngSubmit)="tryLogin(validationForm.value)">
+      <form [formGroup]="validationForm" (ngSubmit)="register(validationForm.value)">
         <ion-item>
           <ion-label>Email</ion-label>
           <ion-input type="email" formControlName="email"></ion-input>
@@ -33,9 +28,9 @@
             {{ validation.message }}
           </div>
         </ng-container>
-        <ion-button expand="full" type="submit" [disabled]="!validationForm.valid">Login</ion-button>
+        <ion-button expand="full" type="submit" [disabled]="!validationForm.valid">Register</ion-button>
         <div>
-          Don't have an account? <a (click)="goRegisterPage()">Register Now!</a>
+          Already have an account? <a (click)="goLoginPage()">Login Here</a>
         </div>
       </form>
     </ion-card-content>
